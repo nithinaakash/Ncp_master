@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "public.dtd">
+<?xml-stylesheet type="text/xsl" href="cat.xsl"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cat.xsd">
+    <public category="Dosiment rist">
+        <title>Dosimetrist</title>
+        <Salary_info >Dosimetrists earn between $81,000 and $112,000</Salary_info>
+        <job_info>The Bureau of Labor Statistics anticipates that employment will grow 14% between 2014 and 2024, much faster than the average for all occupations,</job_info>
+        <Education>Dosimetrists need at least a bachelor’s degree and often a master’s in medical dosimetry</Education>
+    </public>
+    <public category="Anesthesiologists">
+        <title>Anesthesiologists</title>
+        <Salary_info >Anesthesiologists earn between a range usually between $305,400 - $399,629</Salary_info>
+        <job_info>While the U.S. Bureau of Labor Statistics (BLS) does not track employment trends</job_info>
+        <Education>An anesthesiologist requires the completion of a bachelor’s degre</Education>
+    </public>
+    <public category="Cardiac Perfusionists">
+        <title>CardiacPerfusionists</title>
+        <Salary_info>Cardiac Perfusionists earn between about $70,000 - $90,000</Salary_info>
+        <job_info>Since this is a very hard and competitive field</job_info>
+        <Education>Cardiac Perfusionists require a bachelor’s degree </Education>
+    </public>
+    <public category="Actuary">
+        <title>Actuary</title>
+        <Salary_info >Their pay is about $102,880 per year or $49.46 per hou</Salary_info>
+        <job_info>As of 2016, 23,600 possible jobs are available.</job_info>
+        <Education>- A bachelor’s is needed.</Education>
+    </public>
+    <public category=" Finacial Analyst">
+        <title>FinacialAnalyst</title>
+        <Salary_info>Their pay is about $85,660 per year or $41.18 per hour</Salary_info>
+        <job_info>As of 2016, 296,100 possible jobs are available.</job_info>
+        <Education>A bachelor’s is needed.</Education>
+    </public>
+    <public category="Personal Financial Adviso">
+        <title>PersonalFinancialAdvisor</title>
+        <Salary_info >Their pay is about $88,890 per year or $42.73 per hour.</Salary_info>
+        <job_info>As of 2016, 271,900 possible jobs are available.</job_info>
+        <Education>A bachelor’s is needed</Education>
+    </public>
+    <public category="Web developer">
+        <title>Webdeveloper</title>
+        <Salary_info >Their salary is $75,487 per yea</Salary_info>
+        <job_info>There were 148,500 positions in 2014</job_info>
+        <Education>A bachelor’s degree in computer science or a related field is needed.</Education>
+    </public>
+    <public category="Computer Network Architect">
+        <title>ComputerNetworkArchitect</title>
+        <Salary_info >Their salary is $91,000</Salary_info>
+        <job_info>Employment of computer network architects is projected to grow 15 percent</job_info>
+        <Education>  A bachelor’s degree in a computer related field is necessary</Education>
+    </public>
+    <public category="Information Security Analyst">
+        <title>InformationSecurityAnalyst</title>
+        <Salary_info >Their salary is $86,170 per year</Salary_info>
+        <job_info>Employment of information security analysts is projected to grow </job_info>
+        <Education>One would need a bachelor’s degree in computer science</Education>
+    </public>
+</root>    	

@@ -1,0 +1,9 @@
+node_modules/
+package_lock.json
+.gradle/
+.settings/
+bin/
+build/
+.classpath
+.project
+.DS_Store

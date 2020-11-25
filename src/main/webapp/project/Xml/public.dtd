@@ -1,0 +1,19 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT root (public)+>
+<!ATTLIST root xmlns CDATA #FIXED '' xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation NMTOKEN #REQUIRED>
+
+<!ELEMENT public (title,Salary_info,job_info,Education)>
+<!ATTLIST public xmlns CDATA #FIXED '' category CDATA #REQUIRED>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title xmlns CDATA #FIXED ''>
+
+<!ELEMENT Salary_info (#PCDATA)>
+<!ATTLIST Salary_info xmlns CDATA #FIXED ''>
+
+<!ELEMENT job_info (#PCDATA)>
+<!ATTLIST job_info xmlns CDATA #IMPLIED>
+
+<!ELEMENT Education (#PCDATA)>
+<!ATTLIST Education xmlns CDATA #FIXED ''>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root SYSTEM "title.dtd">
+<?xml-stylesheet type="text/xsl"  href="cat1.xsl"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cat1.xsd">
+    <title category="medicine">
+        <date>2002/11/08</date>
+        <int>3</int>
+        <name1>Dosim etrist</name1>
+        <name2>Anesthesiologist</name2>
+        <name3>Cardiac Perfusionist</name3>
+    </title>
+    <title category="Math">
+        <date>2002/11/5</date>
+        <int>4</int>
+        <name1>Actuary</name1>
+        <name2> Financial Analyst</name2>
+        <name3> Personal Financial Advisory </name3>
+    </title>
+    <title category="Technology">
+        <date>2002/11/6</date>
+        <int>7</int>
+        <name1>WebDeveloper</name1>
+        <name2> Computer Network Architect</name2>
+        <name3>Information Security Analyst </name3>
+    </title>
+    <title category="Computer Network Architect">
+        <date>2002/11/9</date>
+        <int>6</int>
+        <name1>Network</name1>
+        <name2>  Architect</name2>
+        <name3>Information </name3>
+    </title>
+    <title category="Finacial Analyst">
+        <date>2002/11/7</date>
+        <int>43</int>
+        <name1>Finance</name1>
+        <name2> Computer</name2>
+        <name3> Analyst </name3>
+    </title>
+</root>

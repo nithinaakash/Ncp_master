@@ -1,0 +1,4699 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  div.total{
+    position: absolute;
+    top: 70%;
+  }
+
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dropbtn {
+  background-color: #ff7575;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  border: none;
+  width: 400px;
+  height: 100px;
+  font-family: Candara;
+}
+
+.dropdown {
+  position: absolute;
+  top:30%;
+  right:38%;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: pink;}
+
+
+
+*
+{
+    outline: none;
+}
+
+html, body
+{
+    height: 100%;
+    min-height: 100%;
+}
+
+body
+{
+    margin: 0;
+    background-color: #ffd8d8;
+   
+}
+
+.tb
+{
+    display: table;
+    width: 100%;
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+form
+{
+    height: 96px;
+}
+
+input[type="text"]
+{
+    width: 100%;
+    height: 50px;
+    font-size: 40px;
+    line-height: 1;
+}
+
+input[type="text"]::placeholder
+{
+    color: #d3d3d3;
+}
+html {
+  box-sizing: border-box;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Candara ;
+     background-color: #ffd8d8;
+
+}
+
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: white;
+}
+
+.tablink {
+  background-color: #ffd8d8;
+  color: #6b6363;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 21px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #ff7575;
+}
+
+
+.tabcontent {
+  color: grey;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Engineering {background-color: #ffd8d8;}
+#Management {background-color: #ffd8d8;}
+#Medicine {background-color:#ffd8d8 ;}
+#Arts {background-color: #ffd8d8;}
+
+
+
+.column {
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  border: 10px outset pink
+}
+
+
+p
+{
+  color: 
+  #6b6363;
+
+}
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+.flip-card {
+  background-color: transparent;
+  width: 320px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+}
+
+.flip-card-front {
+  background-color: #faeded;
+  color: black;
+  
+}
+
+.flip-card-back {
+  background-color: #faeded;
+  color: white;
+  transform: rotateY(180deg);
+
+}
+
+
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Engineering', this, '#ff7575')" id="defaultOpen">Engineering</button>
+<button class="tablink" onclick="openPage('Management', this, '#ff7575')" >Management</button>
+<button class="tablink" onclick="openPage('Medicine', this, '#ff7575')">Medicine</button>
+<button class="tablink" onclick="openPage('Arts', this, '#ff7575')">Arts</button>
+
+
+<div class="dropdown">
+  <button class="dropbtn">Choose your destination</button>
+  <div class="dropdown-content">
+    <a href="dashboard1.html">Home</a>
+    <a href="bangalore.html">Bangalore</a>
+    <a href="mumbai.html">Mumbai</a>
+    <a href="delhi.html">New Delhi</a>
+  </div>
+</div>
+
+
+<div id="Engineering" class="tabcontent">
+  <p>Chennai, being the centre of IT industry and informational services, provides great job opportunities. Along with this, there are several multinational companies in Chennai which offer competitive packages as compared to other cities. Thus, Chennai is one of the prominent regions for students who wish to pursue BTech. BTech Colleges in Chennai offer quality education with high placements. These colleges offer full-time BTech courses in Chennai. These courses are of four years' in duration. Of the many BTech specialisations, Computer Science Engineering is the most sought-after and offers bright prospects for student’s growth.</p>
+  <div class="total">
+<div class="row">
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+            <p>IIT Madras - Indian Institute of Technology </p>
+            <img src="iitm.png" alt="iitm" style="width:100%" height="90%">
+         
+          </div>
+    <div class="flip-card-back"> 
+
+<div id="iit1" class="modal">
+
+  <input class="form-control" id="myInput1" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable1">
+  <tr>
+    <td>B.Tech. in Electrical Engineering</td>
+    <td>₹ 8.55 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+ <tr>
+    <td>Integrated B.Tech. + M.Tech in Electrical Engineering </td>
+    <td>₹ 10.67 Lakh</td>
+    <td>5 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+<tr>
+    <td>M.Tech. in Solid State Devices</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Integrated Circuit and System</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Microelectronics Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>B.Tech. in Aerospace Engineering</td>
+    <td>₹ 8.55 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+ <tr>
+    <td>Integrated B.Tech. + M.Tech in Aerospace Engineering </td>
+    <td>₹ 10.67 Lakh</td>
+    <td>5 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+<tr>
+    <td>M.Tech. in Aerodynamics Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Aerospace Structure</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Aerospace Propulsion</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Dynamics and Control</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td>₹ 8.55 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+ <tr>
+    <td>Integrated B.Tech. + M.Tech in Mechanical Engineering </td>
+    <td>₹ 10.67 Lakh</td>
+    <td>5 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+<tr>
+    <td>M.Tech. in Thermal and Fluids Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Manufacturing Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>B.Tech. in Metallurgical Engineering and Materials Science</td>
+    <td>₹ 8.55 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+<tr>
+    <td>Integrated B.Tech. + M.Tech in Mettalurgical Engineering </td>
+    <td>₹ 10.67 Lakh</td>
+    <td>5 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+<tr>
+    <td>
+B.Tech. in Metallurgical Engineering and Materials Science with M.Tech. in Ceramics and Composites </td>
+    <td>₹ 10.67 Lakh</td>
+    <td>5 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+<tr>
+    <td>M.Tech. in Water Resources Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Geotechnical Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Electronic Systems</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Ocean Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 8.55 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+<tr>
+    <td>B.Tech. in Computer Science and Engineering</td>
+    <td>₹ 8.55 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Mains, JEE Advanced</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Science and Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Power Electronics and Power Systems</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Remote Sensing</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Structurual Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Communications Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>M.Tech. in Transportation Systems Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="iit2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="iit3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="iit4" class="modal">
+  <p>Guindy, Chennai</p>
+ </div>
+ <div id="iit5" class="modal">
+  <p>#1 NIRF</p>
+ </div>
+ 
+
+<p ><a href="#iit1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#iit2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#iit3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#iit4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#iit5" rel="modal:open" class="button">RANKING</a></p>
+
+
+      
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+    <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <p>CEG - College of Engineering Guindy, Anna University </p>
+       <img src="ceg.png" alt="ceg" style="width:100%"height=90% >
+          </div>
+    <div class="flip-card-back"> 
+      <div id="ict1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput2" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable2">
+  <tr>
+    <td>B.Tech. in Food Engineering and Technology</td>
+    <td> 3.41 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main, ICAR AIEEA</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Chemical Engineering</td>
+    <td> 3.41 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>M.Tech. in Food Engineering and Technology</td>
+    <td>₹ 1.53 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Dyestuff Technology</td>
+    <td>₹ 1.53 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+<tr>
+    <td>Master of Chemical Engineering (MCE)</td>
+    <td>₹ 1.53 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test</td>
+</tr>
+
+
+<tr>
+    <td>M.Tech. in Microelectronics Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Surface Coating Technology</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Perfumery and Flavour Technology</td>
+    <td>₹ 1.52 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Polymer Engineering and Technology</td>
+    <td>₹ 1.57 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ict2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ict3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="ict4" class="modal">
+  <p> <li>Location: Matunga East</li></p>
+ </div>
+ <div id="ict5" class="modal">
+  <p>#18 NIRF</p>
+ </div>
+       
+<p ><a href="#ict1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#ict2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ict3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ict4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ict5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+  
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+     <p>SRM Institute of Science and Technology, Ramapuram </p>
+
+      <img src="srm.png" alt="srm" style="width:100%"height=90% >
+
+    </div>
+    <div class="flip-card-back">
+      <div id="vjti1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput3" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable3">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="vjti2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="vjti3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="vjti4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="vjti5" class="modal">
+  <p>#20 NIRF</p>
+ </div>
+
+             
+<p ><a href="#vjti1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#vjti2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#vjti3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#vjti4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#vjti5" rel="modal:open" class="button">RANKING</a></p>
+       
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+       <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+             <p>SSN College of Engineering (SSNCE)</p>
+      <img src="ssn.jpg" alt="ssn" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="kjs1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput4" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable4">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="kjs2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="kjs3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="kjs4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="kjs5" class="modal">
+  <p>#171 NIRF</p>
+ </div>
+
+             
+<p ><a href="#kjs1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#kjs2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#kjs3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#kjs4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#kjs5" rel="modal:open" class="button">RANKING</a></p>
+       
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+ 
+<div class="row">
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+         <p>Sathyabama Institute of Science and Technology</p>
+      <img src="sathya.png" alt="sathya" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="djs1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput5" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable5">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="djs2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="djs3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="djs4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="djs5" class="modal">
+  <p>#250 NIRF</p>
+ </div>
+
+             
+<p ><a href="#djs1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#djs2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#djs3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#djs4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#djs5" rel="modal:open" class="button">RANKING</a></p>
+      
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ 
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+            <p>Vel Tech Rangarajan Dr. Sagunthala R and D Institute of Science and Technology</p>
+      <img src="vel.jpg" alt="vel" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="spc1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput6" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable6">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="spc2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="spc3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="spc4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="spc5" class="modal">
+  <p>#201 -250</p>
+ </div>
+
+             
+<p ><a href="#spc1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#spc2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#spc3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#spc4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#spc5" rel="modal:open" class="button">RANKING</a></p>
+      
+      
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ 
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+              <p>Rajalakshmi Engineering College </p>
+      <img src="rec.jpg" alt="rec" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="n1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput7" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable7">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="n2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="n3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="n4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="n5" class="modal">
+  <p>#201 - 250</p>
+ </div>
+
+             
+<p ><a href="#n1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#n2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#n3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#n4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#n5" rel="modal:open" class="button">RANKING</a></p>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+           <p>Hindustan Institute of Technology & Science (HITS)</p>
+      <img src="hind.png" alt="hind" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="a1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput8" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable8">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="a2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="a3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="a4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="a5" class="modal">
+  <p>#201- 250</p>
+ </div>
+
+             
+<p ><a href="#a1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#a2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#a3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#a4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#a5" rel="modal:open" class="button">RANKING</a></p>
+      
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row">
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+    <p>Sri Sai Ram Engineering College </p>
+            <img src="sai.png" alt="sai" style="width:100%" height="90%">
+          </div>
+    <div class="flip-card-back"> 
+         <div id="v1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput9" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable9">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="v2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="v3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="v4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="v5" class="modal">
+  <p>#201- 250</p>
+ </div>
+
+             
+<p ><a href="#v1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#v2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#v3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#v4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#v5" rel="modal:open" class="button">RANKING</a></p>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+           <p>Crescent School of Life Sciences (B.S.Abdur Rahman University) </p>
+      <img src="rahman.jpg" alt="rahman" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="t1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput10" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable10">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="t2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="t3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="t4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="t5" class="modal">
+  <p>#201- 250</p>
+ </div>
+
+             
+<p ><a href="#t1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#t2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#t3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#t4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#t5" rel="modal:open" class="button">RANKING</a></p>
+   
+     
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+           <p>St Joseph's College of Engineering </p>
+      <img src="st.jpg" alt="spit" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="s1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput11" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable11">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="s3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="s4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="s5" class="modal">
+  <p>#201-250</p>
+ </div>
+
+             
+<p ><a href="#s1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#s2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#s3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#s4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#s5" rel="modal:open" class="button">RANKING</a></p>
+     
+ 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+          <p>Panimalar Engineering College </p>
+      <img src="pec.jpg" alt="pec" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="s1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput12" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable12">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="s3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="s4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="s5" class="modal">
+  <p>#201- 250</p>
+ </div>
+
+             
+<p ><a href="#s1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#s2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#s3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#s4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#s5" rel="modal:open" class="button">RANKING</a></p>
+    
+       
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+           <p>Dr MGR University </p>
+      <img src="mgr.jpg" alt="mgr" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="p1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput13" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable13">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="p2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="p3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="p4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="p5" class="modal">
+  <p>#201- 250</p>
+ </div>
+
+             
+<p ><a href="#p1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#p2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#p3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#p4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#p5" rel="modal:open" class="button">RANKING</a></p>
+    
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+         <p>KCG College of Technology </p>
+      <img src="kcg.png" alt="kcg" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="sc1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput14" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable14">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sc22" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="sc33" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="sc4" class="modal">
+  <p>Location: ChennaiL</p>
+ </div>
+ <div id="sc5" class="modal">
+  <p>#201- 250</p>
+ </div>
+
+             
+<p ><a href="#sc1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#sc2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#sc3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#sc4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#sc5" rel="modal:open" class="button">RANKING</a></p>
+
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+    <p>Velammal Engineering College </p>
+      <img src="vekammal.png" alt="vec" style="width:100%"height=90% >
+    </div>
+    </div>
+    <div class="flip-card-back">
+         <div id="ves1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput15" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable15">
+  <tr>
+    <td>B.Tech. in Computer Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>MHT CET, JEE Main</td>
+</tr>
+  <tr>
+    <td>B.Tech. in Mechanical Engineering</td>
+    <td> 3.10 Lakh</td>
+    <td>4 years</td>
+    <td> JEE Main, MHT CET</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering</td>
+    <td>₹ 3.10 Lakh</td>
+    <td>4 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Civil Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Automobile Engineering</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, GPAT</td>
+</tr>
+
+
+
+<tr>
+    <td>M.Tech. in Computer Engineering</td>
+    <td>₹ 1.32 Lakh</td>
+    <td>2 years</td>
+    <td>GATE</td>
+</tr>
+
+<tr>
+    <td>B.Tech. in Civil Engineering (Lateral Entry)</td>
+    <td>₹ 3.42 Lakh</td>
+    <td>3 years</td>
+    <td>JEE Main, MHT CET</td>
+</tr>
+<tr>
+    <td>M.Tech. in Computer Engineering (with specialization in Software Engineering)</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+<tr>
+    <td>M.Tech. in Textile Technology</td>
+    <td>₹ 1.65 Lakh</td>
+    <td>2 years</td>
+    <td>GATE, Institute Written Test, GPAT</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ves2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ves3" class="modal">
+  <p><b>Exams:</b> JEE Advanced, JEE Main/ GATE (Masters)</p>
+ </div>
+<div id="ves4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ves5" class="modal">
+  <p>#201- 250</p>
+ </div>
+
+             
+<p ><a href="#ves1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#ves2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ves3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ves4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ves5" rel="modal:open" class="button">RANKING</a></p>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+<div id="Management" class="tabcontent">
+  <p>Master of Business Administration (MBA) is one of the most popular post-graduate programmes. It is an internationally-recognised degree designed for individuals who want to pursue a career in business and management. There are nearly 150 MBA Colleges in Chennai. Chennai, being the centre of IT industry and informational services, provides great job opportunities. Along with this, there are several multinational companies in Chennai which offer competitive packages as compared to other cities. Thus, Chennai is one of the prominent regions for students who wish to pursue an MBA. Around 91% MBA colleges in Chennai are private and rest are public/government.</p>
+ <div class="total">
+  <div class="row">
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+       <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      LIBA - Loyola Institute of Business Administration </p>
+
+      <img src="liba.png" alt="liba" style="width:100%"height=90% >
+          </div>
+    <div class="flip-card-back"> 
+        <div id="sj1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput17" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable17">
+  <tr>
+    <td>Master of Business Administration (MBA)</td>
+    <td> 8.32 Lakh</td>
+    <td>2 years</td>
+    <td>CAT, WAT</td>
+</tr>
+  <tr>
+    <td>Executive MBA</td>
+    <td> 36 Lakh</td>
+    <td>18 months</td>
+    <td> CAT</td>
+</tr>
+
+<tr>
+    <td>Executive Program in Management</td>
+    <td>₹ 1.80 Lakh</td>
+    <td>1 years</td>
+    <td>CAT</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="sj2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="sj3" class="modal">
+  <p><b>Exams:</b> CAT, WAT</p>
+ </div>
+<div id="sj4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="sj5" class="modal">
+  <p>#11</p>
+ </div>
+        <p ><a href="#sj1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#sj2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#sj3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#sj4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#sj5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+    <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+          <p>DoMS IIT Madras - Department of Management Studies </p>
+            <img src="iitm.png" alt="iitm" style="width:100%" height="90%">
+          </div>
+    <div class="flip-card-back"> 
+        <div id="n1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput18" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable18">
+  <tr>
+    <td>Master of Business Administration (MBA)</td>
+    <td> 8.32 Lakh</td>
+    <td>2 years</td>
+    <td>CAT, WAT</td>
+</tr>
+  <tr>
+    <td>Executive MBA</td>
+    <td> 36 Lakh</td>
+    <td>18 months</td>
+    <td> CAT</td>
+</tr>
+
+<tr>
+    <td>Executive Program in Management</td>
+    <td>₹ 1.80 Lakh</td>
+    <td>1 years</td>
+    <td>CAT</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="ni2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ni3" class="modal">
+  <p><b>Exams:</b> CAT, WAT</p>
+ </div>
+<div id="ni4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ni5" class="modal">
+  <p>#13</p>
+ </div>
+     <p ><a href="#sj1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#sj2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#sj3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#sj4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#sj5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+  
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+ <p>Great Lakes Institute of Management, Chennai</p>
+       <img src="gl.png" alt="gl" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+        <div id="s1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput19" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable19">
+  <tr>
+    <td>Master of Business Administration (MBA)</td>
+    <td> 8.32 Lakh</td>
+    <td>2 years</td>
+    <td>CAT, WAT</td>
+</tr>
+  <tr>
+    <td>Executive MBA</td>
+    <td> 36 Lakh</td>
+    <td>18 months</td>
+    <td> CAT</td>
+</tr>
+
+<tr>
+    <td>Executive Program in Management</td>
+    <td>₹ 1.80 Lakh</td>
+    <td>1 years</td>
+    <td>CAT</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="s2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="s3" class="modal">
+  <p><b>Exams:</b> CAT, WAT</p>
+ </div>
+<div id="s4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="s5" class="modal">
+  <p>#11</p>
+ </div>
+      
+       <p ><a href="#sj1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#sj2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#sj3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#sj4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#sj5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+       <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+          <p>Anna University</p>
+      <img src="anna.jpg" alt="anna" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+        <div id="n1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput20" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable20">
+  <tr>
+    <td>Master of Business Administration (MBA)</td>
+    <td> 8.32 Lakh</td>
+    <td>2 years</td>
+    <td>CAT, WAT</td>
+</tr>
+  <tr>
+    <td>Executive MBA</td>
+    <td> 36 Lakh</td>
+    <td>18 months</td>
+    <td> CAT</td>
+</tr>
+
+<tr>
+    <td>Executive Program in Management</td>
+    <td>₹ 1.80 Lakh</td>
+    <td>1 years</td>
+    <td>CAT</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="n2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="n3" class="modal">
+  <p><b>Exams:</b> CAT, WAT</p>
+ </div>
+<div id="n4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="n5" class="modal">
+  <p>#15</p>
+ </div>
+     
+       <p ><a href="#sj1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#sj2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#sj3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#sj4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#sj5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+ 
+<div class="row">
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+       <p>SRM Institute Ramapuram</p>
+      <img src="srm.png" alt="srm" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+        <div id="sj1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput21" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable21">
+  <tr>
+    <td>Master of Business Administration (MBA)</td>
+    <td> 8.32 Lakh</td>
+    <td>2 years</td>
+    <td>CAT, WAT</td>
+</tr>
+  <tr>
+    <td>Executive MBA</td>
+    <td> 36 Lakh</td>
+    <td>18 months</td>
+    <td> CAT</td>
+</tr>
+
+<tr>
+    <td>Executive Program in Management</td>
+    <td>₹ 1.80 Lakh</td>
+    <td>1 years</td>
+    <td>CAT</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="sj2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="sj3" class="modal">
+  <p><b>Exams:</b> CAT, WAT</p>
+ </div>
+<div id="sj4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="n15" class="modal">
+  <p>#50</p>
+ </div>
+      
+      <p ><a href="#sj1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#sj2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#sj3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#sj4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#n15" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ 
+</div>
+ 
+</div>
+</div>
+
+
+
+<div id="Medicine" class="tabcontent">
+  <p>Find information related to Courses, Fees, Admissions, Rankings, Eligibility for Medical Colleges for MBBS in Chennai</p>
+  <div class="total">
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+       <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+     <p>Sri Ramachandra Institute of Higher Education and Research </p>
+            <img src="ram.jpg" alt="ram" style="width:100%" height="90%">
+          </div>
+    <div class="flip-card-back">
+          <div id="g1" class="modal">
+ 
+  <input class="form-control" id="myInput25" type="text" placeholder="Search..">
+  <br>
+  <table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable25">
+
+
+  <tr>
+    <td>MBBS - Bachelor of Medicine and Bachelor of Surgery</td>
+    <td>a</td>
+    <td>66 months</td>
+    <td>NEET</td>
+</tr>
+
+  <tr>
+    <td>MD in Anaesthesiology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Radio Diagnosis</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in General Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Forensic Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Pulmonary Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physical Medicine and Rehabilitation</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physiology</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Tuberculosis and Chest Disease</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Anatomy</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Venereology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET </td> 
+  </tr>
+</tbody>
+</table>
+</div>
+
+  
+              
+
+<div id="g2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="g3" class="modal">
+  <p><b>Exams:</b> NEETNEET PG</p>
+ </div>
+<div id="g4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="g5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#g1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#g2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#g3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#g4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#g5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+    <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+  <p>SRM Medical College Hospital and Research Centre </p>
+       <img src="srmm.jpg" alt="srmm" style="width:100%"height=90% >
+          </div>
+    <div class="flip-card-back"> 
+     <div id="g1" class="modal">
+
+  <input class="form-control" id="myInput26" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable26">
+
+
+  <tr>
+    <td>MBBS - Bachelor of Medicine and Bachelor of Surgery</td>
+    <td>a</td>
+    <td>66 months</td>
+    <td>NEET</td>
+</tr>
+
+  <tr>
+    <td>MD in Anaesthesiology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Radio Diagnosis</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in General Medicine</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Forensic Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Pulmonary Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physical Medicine and Rehabilitation</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physiology</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Tuberculosis and Chest Disease</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Anatomy</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Venereology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET </td> 
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div id="g2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="g3" class="modal">
+  <p><b>Exams:</b> NEET
+NEET PG</p>
+ </div>
+<div id="g4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="g5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#g1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#g2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#g3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#g4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#g5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+  
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      
+ <p>Madras Medical College, Chennai </p>
+
+      <img src="mmc.jpg" alt="mmc" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+         <div id="g1" class="modal">
+      
+  <input class="form-control" id="myInput27" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable27">
+
+
+  <tr>
+    <td>MBBS - Bachelor of Medicine and Bachelor of Surgery</td>
+    <td>a</td>
+    <td>66 months</td>
+    <td>NEET</td>
+</tr>
+
+  <tr>
+    <td>MD in Anaesthesiology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Radio Diagnosis</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in General Medicine</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Forensic Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Pulmonary Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physical Medicine and Rehabilitation</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physiology</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Tuberculosis and Chest Disease</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Anatomy</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Venereology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET </td> 
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div id="g2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="g3" class="modal">
+  <p><b>Exams:</b> NEET
+NEET PG</p>
+ </div>
+<div id="g4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="g5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#g1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#g2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#g3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#g4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#g5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+       <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+          <p>Saveetha University - Saveetha Institute of Medical and Technical Sciences</p>
+      <img src="sav.jpg" alt="saveetha" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+              <p ><a href="#sj1" rel="modal:open" class="button">COURSES</a></p>
+<p ><a href="#sj2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#sj3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#sj4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#sj5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+ 
+<div class="row">
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+        <p>Government Kilpauk Medical College,Chennai
+</p>
+      <img src="kmc.jpg" alt="kmc" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+    <div id="g1" class="modal">
+
+  <input class="form-control" id="myInput28" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable28">
+
+
+  <tr>
+    <td>MBBS - Bachelor of Medicine and Bachelor of Surgery</td>
+    <td>a</td>
+    <td>66 months</td>
+    <td>NEET</td>
+</tr>
+
+  <tr>
+    <td>MD in Anaesthesiology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Radio Diagnosis</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in General Medicine</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Forensic Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Pulmonary Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physical Medicine and Rehabilitation</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physiology</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Tuberculosis and Chest Disease</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Anatomy</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Venereology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET </td> 
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div id="g2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="g3" class="modal">
+  <p><b>Exams:</b> NEET
+NEET PG</p>
+ </div>
+<div id="g4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="g5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#g1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#g2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#g3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#g4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#g5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ 
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+  <p>Stanley Medical College</p>
+      <img src="smc.png" alt="smc" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+<div id="g1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput29" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable29">
+
+
+  <tr>
+    <td>MBBS - Bachelor of Medicine and Bachelor of Surgery</td>
+    <td>a</td>
+    <td>66 months</td>
+    <td>NEET</td>
+</tr>
+
+  <tr>
+    <td>MD in Anaesthesiology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Radio Diagnosis</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in General Medicine</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Forensic Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Pulmonary Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physical Medicine and Rehabilitation</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physiology</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Tuberculosis and Chest Disease</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Anatomy</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Venereology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET </td> 
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div id="g2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="g3" class="modal">
+  <p><b>Exams:</b> NEET
+NEET PG</p>
+ </div>
+<div id="g4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="g5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#g1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#g2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#g3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#g4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#g5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ 
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+          <p>TMCH - Tagore Medical College and Hospital </p>
+      <img src="tagore.jpg" alt="tagore" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+<div id="g1" class="modal">
+    
+  <input class="form-control" id="myInput30" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable30">
+
+
+  <tr>
+    <td>MBBS - Bachelor of Medicine and Bachelor of Surgery</td>
+    <td>a</td>
+    <td>66 months</td>
+    <td>NEET</td>
+</tr>
+
+  <tr>
+    <td>MD in Anaesthesiology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Radio Diagnosis</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in General Medicine</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Forensic Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Pulmonary Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physical Medicine and Rehabilitation</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physiology</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Tuberculosis and Chest Disease</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Anatomy</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Venereology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET </td> 
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div id="g2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="g3" class="modal">
+  <p><b>Exams:</b> NEET
+NEET PG</p>
+ </div>
+<div id="g4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="g5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#g1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#g2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#g3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#g4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#g5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+             <p>Sri Muthukumaran Medical College</p>
+      <img src="muthu.jpg" alt="muthu" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+             <div id="g1" class="modal">
+ 
+  <input class="form-control" id="myInput31" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable31">
+
+
+  <tr>
+    <td>MBBS - Bachelor of Medicine and Bachelor of Surgery</td>
+    <td>a</td>
+    <td>66 months</td>
+    <td>NEET</td>
+</tr>
+
+  <tr>
+    <td>MD in Anaesthesiology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Radio Diagnosis</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in General Medicine</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Forensic Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Pulmonary Medicine</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physical Medicine and Rehabilitation</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Physiology</td>
+    <td></td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Tuberculosis and Chest Disease</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Anatomy</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET</td>
+</tr>
+  <tr>
+    <td>MD in Venereology</td>
+    <td>a</td>
+    <td>3 years</td>
+    <td>NEET </td> 
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div id="g2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="g3" class="modal">
+  <p><b>Exams:</b> NEET
+NEET PG</p>
+ </div>
+<div id="g4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="g5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#g1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#g2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#g3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#g4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#g5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+ 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="Arts" class="tabcontent">
+  <p>Find information related to Courses, Fees, Admissions, Rankings, Eligibility for Arts ( Fine / Visual / Performing ) colleges in India</p>
+  <div class="total">
+<div class="row">
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+       <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+    <p>MCC - Madras Christian College</p>
+            <img src="mcc.png" alt="mcc" style="width:100%" height="90%">
+          </div>
+    <div class="flip-card-back">
+      <div id="ww1" class="modal">
+ 
+  <input class="form-control" id="myInput34" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable34">
+    <tr>
+    <td>Bachelor of Commerce (B.Com.)</td>
+    <td>? 1.11 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+
+  <tr>
+    <td>M.Sc. in Applied Microbiology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.A. in English</td>
+    <td>? 60,000</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Information Technology</td>
+    <td>? 46,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Computer Science</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Biotechnology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Bank Management</td>
+    <td> ? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td> </td>
+</tr>
+  <tr>
+    <td>B.Com. in Corporate Secretaryship</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr> 
+       </tbody>
+       </table>
+       </div>
+     
+<div id="ww2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ww3" class="modal">
+  <p></p>
+ </div>
+<div id="ww4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ww5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#ww1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#ww2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ww3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ww4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ww5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+    <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+         <p>Loyola College </p>
+       <img src="loy.jpg" alt="loy" style="width:100%"height=90% >
+          </div>
+    <div class="flip-card-back">
+     <div id="ww1" class="modal">
+    
+  <input class="form-control" id="myInput35" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable35">
+    <tr>
+    <td>Bachelor of Commerce (B.Com.)</td>
+    <td>? 1.11 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+
+  <tr>
+    <td>M.Sc. in Applied Microbiology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.A. in English</td>
+    <td>? 60,000</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Information Technology</td>
+    <td>? 46,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Computer Science</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Biotechnology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Bank Management</td>
+    <td> ? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td> </td>
+</tr>
+  <tr>
+    <td>B.Com. in Corporate Secretaryship</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr> 
+       </tbody>
+       </table>
+       </div>
+     
+<div id="ww2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ww3" class="modal">
+  <p></p>
+ </div>
+<div id="ww4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ww5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#ww1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#ww2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ww3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ww4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ww5" rel="modal:open" class="button">RANKING</a></p> 
+       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+  
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+        <p>Stella Maris College </p>
+
+      <img src="stella.jpg" alt="stella" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+ <div id="ww1" class="modal">
+    
+  <input class="form-control" id="myInput36" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable36">
+    <tr>
+    <td>Bachelor of Commerce (B.Com.)</td>
+    <td>? 1.11 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+
+  <tr>
+    <td>M.Sc. in Applied Microbiology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.A. in English</td>
+    <td>? 60,000</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Information Technology</td>
+    <td>? 46,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Computer Science</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Biotechnology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Bank Management</td>
+    <td> ? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td> </td>
+</tr>
+  <tr>
+    <td>B.Com. in Corporate Secretaryship</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr> 
+       </tbody>
+       </table>
+       </div>
+     
+<div id="ww2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ww3" class="modal">
+  <p></p>
+ </div>
+<div id="ww4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ww5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#ww1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#ww2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ww3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ww4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ww5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+       <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+         <p>Women's Christian College</p>
+      <img src="wcc.png" alt="wcc" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+      <div id="ww1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput37" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable37">
+    <tr>
+    <td>Bachelor of Commerce (B.Com.)</td>
+    <td>? 1.11 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+
+  <tr>
+    <td>M.Sc. in Applied Microbiology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.A. in English</td>
+    <td>? 60,000</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Information Technology</td>
+    <td>? 46,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Computer Science</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Biotechnology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Bank Management</td>
+    <td> ? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td> </td>
+</tr>
+  <tr>
+    <td>B.Com. in Corporate Secretaryship</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr> 
+       </tbody>
+       </table>
+       </div>
+     
+<div id="ww2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ww3" class="modal">
+  <p></p>
+ </div>
+<div id="ww4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ww5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#ww1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#ww2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ww3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ww4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ww5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+ 
+<div class="row">
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+               <p>Ethiraj College for Women (Ethiraj)</p>
+      <img src="ethiraj.jpg" alt="ethiraj" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+      <div id="ww1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput38" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable38">
+    <tr>
+    <td>Bachelor of Commerce (B.Com.)</td>
+    <td>? 1.11 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+
+  <tr>
+    <td>M.Sc. in Applied Microbiology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.A. in English</td>
+    <td>? 60,000</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Information Technology</td>
+    <td>? 46,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Computer Science</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Biotechnology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Bank Management</td>
+    <td> ? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td> </td>
+</tr>
+  <tr>
+    <td>B.Com. in Corporate Secretaryship</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr> 
+       </tbody>
+       </table>
+       </div>
+     
+<div id="ww2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ww3" class="modal">
+  <p></p>
+ </div>
+<div id="ww4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ww5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#ww1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#ww2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ww3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ww4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ww5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ 
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+  <p>SDNB Vaishnav College For Women</p>
+      <img src="vaish.png" alt="vaish" style="width:100%"height=90% >
+    </div>
+    <div class="flip-card-back">
+ <div id="ww1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput39" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable39">
+    <tr>
+    <td>Bachelor of Commerce (B.Com.)</td>
+    <td>? 1.11 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+
+  <tr>
+    <td>M.Sc. in Applied Microbiology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.A. in English</td>
+    <td>? 60,000</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Information Technology</td>
+    <td>? 46,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Computer Science</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Biotechnology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Bank Management</td>
+    <td> ? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td> </td>
+</tr>
+  <tr>
+    <td>B.Com. in Corporate Secretaryship</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr> 
+       </tbody>
+       </table>
+       </div>
+     
+<div id="ww2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ww3" class="modal">
+  <p></p>
+ </div>
+<div id="ww4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ww5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#ww1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#ww2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ww3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ww4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ww5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ 
+
+<div class="column">
+    <div class="card">
+
+      <div class="container">
+        <div class="flip-card"> 
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+     <p>
+Chevalier T Thomas Elizabeth College for Women</p>
+      <img src="chev.jpg" alt="chev" style="width:100%"height=90% 
+    </div>
+    <div class="flip-card-back">
+   <div id="ww1" class="modal">
+     <p></p>  
+  <input class="form-control" id="myInput40" type="text" placeholder="Search..">
+  <br>
+<table  class="table table-bordered table-striped">
+  <thread>
+  <tr>
+    <th>Degree</th>
+    <th>Fees</th>
+    <th>Duration</th>
+    <th>Exam</th>
+  </tr>
+</thread>
+<tbody id="myTable40">
+    <tr>
+    <td>Bachelor of Commerce (B.Com.)</td>
+    <td>? 1.11 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+
+  <tr>
+    <td>M.Sc. in Applied Microbiology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.A. in English</td>
+    <td>? 60,000</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Information Technology</td>
+    <td>? 46,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Computer Science</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>M.Sc. in Biotechnology</td>
+    <td>? 66,000</td>
+    <td>2 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Bank Management</td>
+    <td> ? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td> </td>
+</tr>
+  <tr>
+    <td>B.Com. in Corporate Secretaryship</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr>
+  <tr>
+    <td>B.Com. in Computer Applications</td>
+    <td>? 1.02 Lakh</td>
+    <td>3 years</td>
+    <td></td>
+</tr> 
+       </tbody>
+       </table>
+       </div>
+     
+<div id="ww2" class="modal">
+  <p>Total Fees: ₹ 8.55 L</p>
+ </div>
+ <div id="ww3" class="modal">
+  <p></p>
+ </div>
+<div id="ww4" class="modal">
+  <p>Location: Chennai</p>
+ </div>
+ <div id="ww5" class="modal">
+  <p>#11</p>
+ </div>
+         <p ><a href="#ww1" rel="modal:open" class="button">COURSES</a></p>
+      <p ><a href="#ww2" rel="modal:open" class="button">FEES</a></p>
+<p ><a href="#ww3" rel="modal:open" class="button">EXAMS</a></p>
+<p ><a href="#ww4" rel="modal:open" class="button">LOCATION</a></p>
+<p ><a href="#ww5" rel="modal:open" class="button">RANKING</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+$(document).ready(function(){
+  $("#myInput1").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable1 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput2").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable2 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput3").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable3 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput4").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable4 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput5").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable5 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput6").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable6 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput7").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable7 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput8").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable8 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput9").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable9 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput10").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable10 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput11").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable11 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput12").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable12 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput13").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable13 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput14").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable14 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput15").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable15 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput16").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable16 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput17").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable17 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput18").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable18 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput19").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable19 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput20").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable20 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput21").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable21 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput22").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable22 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput23").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable23 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput24").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable24 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput25").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable25 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput26").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable26 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput27").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable27 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput28").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable28 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+ $(document).ready(function(){
+  $("#myInput29").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable29 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput30").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable30 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput31").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable31 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput32").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable32 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput33").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable33 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+$(document).ready(function(){
+  $("#myInput34").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable34 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput35").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable35 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput36").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable36 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput37").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable37 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput38").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable38 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+$(document).ready(function(){
+  $("#myInput39").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable39 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput40").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable40 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput41").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable41 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput42").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable42 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput43").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable43 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput2=44").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable44 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#myInput45").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable45 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+
+</body>
+</html>

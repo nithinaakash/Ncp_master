@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V18</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="project/html/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="project/html/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="project/html/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="project/html/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="project/html/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="project/html/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="project/html/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="project/html/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="project/html/css1/util.css">
+	<link rel="stylesheet" type="text/css" href="project/html/css1/main.css">
+</head>
+<script>
+		function validate()
+{
+    if(   document.getElementById("text1").value == "Snithinaakash@gmail.com"
+       && document.getElementById("text2").value == "1") 
+    {
+       
+       window.location.href="project/html/loading.html";
+       
+    }
+    else if(   document.getElementById("text1").value == "cskavinkumar@gmail.com"
+       && document.getElementById("text2").value == "kavin") 
+    {
+       
+       window.location.href="project/html/loading.html";
+      
+    }
+    else
+    {
+        alert( "validation failed" );
+    }
+    return false;
+}
+
+	</script>
+<body style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-43">
+						Higher Studies Portal
+					</span>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: example@abc.xyz" >
+						<input class="input100" type="text" id="text1" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Email</span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" id="text2" name="pass">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Password</span>
+					</div>
+
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						
+					</div>
+			
+
+					<div class="container-login100-form-btn">
+						<button  class="login100-form-btn" type="reset" value="Reset" onclick="validate()">
+						Login
+						</button>
+					</div>
+					
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							<a href="signup.html"> sign up </a>
+						</span>
+					</div>
+
+					
+				</form>
+
+				<div class="login100-more" id="login"style="background-image: url('project/html/images/Quality_education.jpeg');">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="project/html/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="project/html/js/main.js"></script>
+	
+
+</body>
+</html>

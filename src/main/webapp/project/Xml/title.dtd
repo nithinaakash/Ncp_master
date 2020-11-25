@@ -1,0 +1,22 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT root (title)+>
+<!ATTLIST root xmlns CDATA #FIXED '' xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation NMTOKEN #REQUIRED>
+
+<!ELEMENT title (date,int,name1,name2,name3)>
+<!ATTLIST title xmlns CDATA #FIXED '' category CDATA #REQUIRED>
+
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST date xmlns CDATA #FIXED ''>
+
+<!ELEMENT int (#PCDATA)>
+<!ATTLIST int xmlns CDATA #FIXED ''>
+
+<!ELEMENT name1 (#PCDATA)>
+<!ATTLIST name1 xmlns CDATA #FIXED ''>
+
+<!ELEMENT name2 (#PCDATA)>
+<!ATTLIST name2 xmlns CDATA #FIXED ''>
+
+<!ELEMENT name3 (#PCDATA)>
+<!ATTLIST name3 xmlns CDATA #FIXED ''>

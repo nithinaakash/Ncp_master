@@ -1,0 +1,93 @@
+
+body {
+  background-image: url("https://gogeomatics.ca/wp-content/uploads/Dream-Job.jpg?w=640");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    background-size: cover;
+}
+
+
+  @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+  .login-page {
+    
+    width: 360px;
+    padding: 8% 0 0;
+    margin:0 auto;
+  }
+  .form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .form button:hover,.form button:active,.form button:focus {
+    background: #b32973;
+  }
+
+  .form .dirr{
+    margin: 15px 0 0;
+    color: #b328a5;
+    font-size: 11px;
+
+  }
+
+  .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+  .form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  .form .register-form {
+    display:block;
+  }
+
+  .form .login-form {
+    display: block
+  }
+
+
+  .input-field {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 15px 0px;
+    
+
+    font-size: 18px;}
+    
+    .valid {
+     color: #1684f1;
+    }
+    
+     .invalid {
+     color: #FF0000;
+    }
+    
+  .placeholder {
+     color: #53565A;
+    }
+   

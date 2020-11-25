@@ -1,0 +1,31 @@
+body.color {
+  background-color: #78A1BB;
+}
+div.title {
+  font-size: 45pt;
+  font-family: courier;
+  color:#AD67C6;
+  background-color:#78a1bb;
+  height:150px;
+}
+div.pic {
+  float:left;
+  position: absolute;
+}
+div.job {
+  height:200px ;
+  width: 700px ;
+  background-color:#b3b1b5;
+  color:black ;
+  font-size: 18pt;
+}
+div.sal {
+  height:200px ;
+  width: 700px ;
+  background-color: #b3b1b5;
+  color: black ;
+  font-size:18pt;
+}
+a.visited{
+  color:black;
+}

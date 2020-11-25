@@ -1,0 +1,15 @@
+plugins {
+    id 'war' 
+    id 'org.gretty' version '3.0.3'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+    providedCompile 'org.json:json:20201115'
+    providedCompile 'mysql:mysql-connector-java:8.0.22'
+    testCompile 'junit:junit:4.12'
+}

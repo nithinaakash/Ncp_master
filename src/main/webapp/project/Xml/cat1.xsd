@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="title"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="date"/>
+        <xs:element ref="int"/>
+        <xs:element ref="name1"/>
+        <xs:element ref="name2"/>
+        <xs:element ref="name3"/>
+      </xs:sequence>
+      <xs:attribute name="category" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="date" type="xs:date"/>
+  <xs:element name="int">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:pattern value="[0-9]*"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="name1">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z ]*"/>
+        <xs:whiteSpace value="preserve"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="name2" >
+  <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z ]*"/>
+        <xs:whiteSpace value="preserve"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="name3" >
+  <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z ]*"/>
+        <xs:whiteSpace value="preserve"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

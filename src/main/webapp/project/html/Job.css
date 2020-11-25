@@ -1,0 +1,25 @@
+
+div.title {
+  font-size: 45pt;
+  color: #00FA9A;
+  background-color: #6BB1F5;
+  height:150px;
+}
+div.pic {
+  float:left;
+  position: absolute;
+}
+div.job {
+  height: 200px ;
+  width: 700px ;
+  background-color: #b4b4b4;
+  color: black ;
+  font-size: 18pt;
+}
+div.sal {
+  height: 500px ;
+  width: 700px ;
+  background-color: #b4b4b4;
+  color: black ;
+  font-size: 18pt;
+}
